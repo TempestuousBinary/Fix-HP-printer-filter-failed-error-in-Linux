@@ -3,6 +3,6 @@ I use LaTeX to build the pdfs for *![No. 0](http://thenumberzero.blogspot.com)* 
 
 ## License
 
-This is licensed under a ![Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/).
+This is licensed under a ![Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
 
 
