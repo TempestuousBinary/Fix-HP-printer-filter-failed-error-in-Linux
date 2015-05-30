@@ -22,14 +22,16 @@
 \begin{document}
 \maketitle
 
-\noindent \emph{\textbf{Update, 2015-02-06:} As of a recent upgrade to Xubuntu 14.10, jumping straight to the third solution still fixes the issue.}\\
-
 \tableofcontents
 \vspace{1cm}
 
+\section*{Error: ``filter failed"}\addcontentsline{toc}{section}{Error: ``filter failed"}
+
+\noindent \emph{\textbf{Update, 2015-02-06:} As of a recent upgrade to Xubuntu 14.10, jumping straight to the third solution still fixes this error. It can also fix the ``cups filter failed", ``print service unavailable", and ``bad file descriptor" errors, according to an anonymous commenter.\footnote{\url{http://thenumberzero.blogspot.com/2014/02/how-to-fix-hp-printer-filter-failed.html?showComment=1424962297455\#c7199534845988630867}}}\\
+
 \noindent My printer suffered a paper jam. After releasing the paper, I found that the printer was unwilling to print anything. The specific error was “filter failed”.
 
-\section*{Diagnosing}\addcontentsline{toc}{section}{Diagnosing}
+\subsection*{Diagnosing}\addcontentsline{toc}{subsection}{Diagnosing}
 
 The first step is to open CUPS. In your browser's urlbar, type “localhost:631”. If at any point, CUPS asks for your password, enter it as you would in the terminal. To confirm this error, click on the \emph{Jobs} tab (Figure~\ref{fig1}). 
 
@@ -42,7 +44,7 @@ The first step is to open CUPS. In your browser's urlbar, type “localhost:631�
 
 \noindent As you can see under \emph{State}, I'm getting the “filter failed” error.
 
-\section*{Solution 1: re-install printer}\addcontentsline{toc}{section}{Solution 1: re-install printer}
+\subsection*{Solution 1: re-install printer}\addcontentsline{toc}{subsection}{Solution 1: re-install printer}
 
 Now click on the \emph{Printers} tab, and then click on your printer (Figure~\ref{fig2}).
 
@@ -84,7 +86,7 @@ Now click on the \emph{Printers} tab, and then click on your printer (Figure~\re
 
 \noindent Alternate solution if this fails: rename your printer with a slightly different name.
 
-\section*{Solution 2: re-install CUPS}\addcontentsline{toc}{section}{Solution 2: re-install CUPS}
+\subsection*{Solution 2: re-install CUPS}\addcontentsline{toc}{subsection}{Solution 2: re-install CUPS}
 
 Some found that this error was caused by a problem with CUPS, either after an update or failed installation.
 
@@ -118,9 +120,7 @@ Although you can do this in the terminal, we're going to use a GUI method. Open 
 
 \noindent Now click \emph{Apply} and let Synaptic re-install CUPS. After re-installation, print your document.
 
-\section*{Solution 3: fix HPLIP}\addcontentsline{toc}{section}{Solution 3: fix HPLIP}
-
-\emph{\textbf{Update, 2015-03-02:} According to an anonymous commenter, this solution can also fix ``cups filter failed", ``print service unavailable", and ``bad file descriptor" errors\footnote{\url{http://thenumberzero.blogspot.com/2014/02/how-to-fix-hp-printer-filter-failed.html?showComment=1424962297455\#c7199534845988630867}}.}\\
+\subsection*{Solution 3: fix HPLIP}\addcontentsline{toc}{subsection}{Solution 3: fix HPLIP}
 
 \noindent If you perused the list of packages you marked for re-installation, you may have noticed one called hplip. Formally known as HP Linux Imaging and Printing, HPLIP integrates HP printers with Linux. It is provided by HP\footnote{\url{http://hplipopensource.com/hplip-web/index.html}}.
 
@@ -182,7 +182,7 @@ Do you accept the license terms for the plug-in (y=yes*, n=no, q=quit) ?
 
 \noindent Type "y" if you accept. hp-doctor will then complete without further prompts. Now try to print your document.
 
-\section*{Other solutions}\addcontentsline{toc}{section}{Other solutions}
+\subsection*{Other solutions}\addcontentsline{toc}{subsection}{Other solutions}
 
 In my case, running \emph{hp-check -t} was the solution to fix the ``filter failed" error. However, that may not be the case with you.\\
 
@@ -197,7 +197,7 @@ In my case, running \emph{hp-check -t} was the solution to fix the ``filter fail
 \item Try switching the printer and/or computer off and on again, or trying again later. This solution might seem like a joke, but it's worth a shot if you don't want to re-install packages or play around with the command-line: \url{http://askubuntu.com/questions/304152/after-update-my-printer-will-not-work}.
 \end{itemize}
 
-\section*{Addendum 1: ``unable to connect to server" error}\addcontentsline{toc}{section}{Addendum 1: ``unable to connect to server" error}
+\section*{Error: ``unable to connect to server"}\addcontentsline{toc}{section}{Error: ``unable to connect to server"}
 
 Another error I've discovered is ``unable to connect to server", which has the more serious effect of preventing you from interacting with the printer at all. This means you are unable to load the CUPS interface. When I encountered this error, none of the solutions proposed above worked.
 
