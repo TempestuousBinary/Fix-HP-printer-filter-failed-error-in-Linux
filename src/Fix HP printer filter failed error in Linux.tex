@@ -201,6 +201,112 @@ In my case, running \emph{hp-check -t} was the solution to fix the ``filter fail
 
 Another error I've discovered is ``unable to connect to server", which has the more serious effect of preventing you from interacting with the printer at all. This means you are unable to load the CUPS interface. When I encountered this error, none of the solutions proposed above worked.
 
+\subsection*{Diagnosing}\addcontentsline{toc}{subsection}{Diagnosing}
+
+Try to open CUPS in your browser, by going to "localhost:631". An error page will come up, stating that the browser is unable to connect to the server at localhost:631 (Figure~\ref{fig11}). Trying to access CUPS using a native printing tool (in my case, system-config-printer\footnote{\url{http://cyberelk.net/tim/software/system-config-printer/}}) initially reports that the "printing service is not available" and gives you the option to connect manually. Doing so, however, brings up the ``failed to connect to server" error.
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/unable-to-connect-to-server-1.png}
+  \caption{The ``unable to connect to server" error prevents you from connecting to your printer.}
+  \label{fig11}
+\end{figure}
+
+\subsection*{Solution 1: edit cupsd.conf}\addcontentsline{toc}{subsection}{Solution 1: edit cupsd.conf}
+
+\emph{\textcolor{Red}{Warning: please be aware that this is solution requires editing a config file in your root directory. If you're worried that will make the problem worse, either don't try it or do what I do: screenshot every step so you know how to go back and leave the file open so you can always undo the changes after testing.}}\\
+
+\noindent Read the warning? What we're going to do is change the 
+
+
+This solution comes courtesy of a thread on LinuxQuestions.org.\footnote{\url{https://www.linuxquestions.org/questions/linux-general-1/cups-unable-to-connect-to-server-184088/}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/unable-to-connect-to-server-2.png}
+  \caption{The ``unable to connect to server" error prevents you from connecting to your printer.}
+  \label{fig12}
+\end{figure}
+
+
+
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/unable-to-connect-to-server-3.png}
+  \caption{The ``unable to connect to server" error prevents you from connecting to your printer.}
+  \label{fig13}
+\end{figure}
+
+
+
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/unable-to-connect-to-server-4.png}
+  \caption{The ``unable to connect to server" error prevents you from connecting to your printer.}
+  \label{fig14}
+\end{figure}
+
+
+
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/unable-to-connect-to-server-5.png}
+  \caption{The ``unable to connect to server" error prevents you from connecting to your printer.}
+  \label{fig15}
+\end{figure}
+
+
+
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/unable-to-connect-to-server-6.png}
+  \caption{Success!}
+  \label{fig16}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This will change how CUPS works, but your computer probably (hopefully) won't explode. If you're wor
+
+
+
+
+
+
 
 
 
