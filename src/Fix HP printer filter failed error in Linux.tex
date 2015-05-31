@@ -214,13 +214,12 @@ Try to open CUPS in your browser, by going to "localhost:631". An error page wil
 
 \subsection*{Solution 1: edit cupsd.conf}\addcontentsline{toc}{subsection}{Solution 1: edit cupsd.conf}
 
-\emph{\textcolor{Red}{Warning: please be aware that this is solution requires editing a config file in your root directory. If you're worried that will make the problem worse, either don't try it or do what I do: screenshot every step so you know how to go back and leave the file open so you can always undo the changes after testing.}}\\
+\emph{\textcolor{Red}{Warning: please be aware that this is solution requires editing a config file in your root directory. If you're worried that this will make the problem worse, either don't try it or do what I do: screenshot every step so you know how to go back and leave the file open so you can always undo the changes after testing.}}\\
 
-\noindent Read the warning? What we're going to do is change the 
+\noindent Read the warning? Based on a solution on LinuxQuestions.org.\footnote{\url{https://www.linuxquestions.org/questions/linux-general-1/cups-unable-to-connect-to-server-184088/}},  What we're going to do is edit cupsd.conf to make CUPS listen on port 631. The process is pretty simple---just add the line ``Port 631" or ``Listen 127.0.0.1:631" to cupsd.conf---but for many people, editing 
 
 
-This solution comes courtesy of a thread on LinuxQuestions.org.\footnote{\url{https://www.linuxquestions.org/questions/linux-general-1/cups-unable-to-connect-to-server-184088/}}
-
+This solution comes courtesy of a thread 
 
 
 
@@ -300,9 +299,7 @@ This solution comes courtesy of a thread on LinuxQuestions.org.\footnote{\url{ht
 
 
 
-This will change how CUPS works, but your computer probably (hopefully) won't explode. If you're wor
-
-
+This will change how CUPS works, but your computer probably (hopefully) won't explode.
 
 
 
