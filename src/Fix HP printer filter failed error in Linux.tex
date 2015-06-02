@@ -203,7 +203,7 @@ Another error I've discovered is ``unable to connect to server", which has the m
 
 \subsection*{Diagnosing}\addcontentsline{toc}{subsection}{Diagnosing}
 
-Try to open CUPS in your browser, by going to "localhost:631". An error page will come up, stating that the browser is unable to connect to the server at localhost:631 (Figure~\ref{fig11}). Trying to access CUPS using a native printing tool (in my case, system-config-printer\footnote{\url{http://cyberelk.net/tim/software/system-config-printer/}}) initially reports that the "printing service is not available" and gives you the option to connect manually. Doing so, however, brings up the ``failed to connect to server" error.
+Try to open CUPS in your browser, by going to ``localhost:631". An error page will come up, stating that the browser is unable to connect to the server at localhost:631 (Figure~\ref{fig11}). Trying to access CUPS using a native printing tool (in my case, system-config-printer\footnote{\url{http://cyberelk.net/tim/software/system-config-printer/}}) initially reports that the ``printing service is not available" and gives you the option to connect manually. Doing so, however, brings up the ``failed to connect to server" error.
 
 \begin{figure}[!htp]
   \centering
@@ -214,36 +214,22 @@ Try to open CUPS in your browser, by going to "localhost:631". An error page wil
 
 \subsection*{Solution 1: edit cupsd.conf}\addcontentsline{toc}{subsection}{Solution 1: edit cupsd.conf}
 
-\emph{\textcolor{Red}{Warning: please be aware that this is solution requires editing a config file in your root directory. If you're worried that this will make the problem worse, either don't try it or do what I do: screenshot every step so you know how to go back and leave the file open so you can always undo the changes after testing.}}\\
+\emph{\textcolor{Red}{Warning: please be aware that this solution requires editing a config file in your root directory. If you're worried that this will make the problem worse, either don't try it or do what I do: screenshot every step so you know how to go back and leave the file open so you can always undo the changes after testing.}}\\
 
-\noindent Read the warning? Based on a solution on LinuxQuestions.org.\footnote{\url{https://www.linuxquestions.org/questions/linux-general-1/cups-unable-to-connect-to-server-184088/}},  What we're going to do is edit cupsd.conf to make CUPS listen on port 631. The process is pretty simple---just add the line ``Port 631" or ``Listen 127.0.0.1:631" to cupsd.conf---but for many people, editing 
+\noindent Read the warning? Based on a solution on LinuxQuestions.org\footnote{\url{https://www.linuxquestions.org/questions/linux-general-1/cups-unable-to-connect-to-server-184088/}}, what we're going to do is edit cupsd.conf to make CUPS listen on port 631. The process is pretty simple---just add the line ``Port 631" or ``Listen 127.0.0.1:631" to cupsd.conf---but many people find editing their root directory daunting. This tutorial is for them.\\
 
+\noindent The first step is to open your terminal, then type in the command to open cupsd.conf with a text editor: ``sudo [text editor] /etc/cups/cupsd.conf" (Figure~\ref{fig12}). Since I use Mousepad, the default text editor in Xubuntu, I entered ``sudo mousepad /etc/cups/cupsd.conf".
 
-This solution comes courtesy of a thread 
+% Add additional info about sudo
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{figure}[!htp]
+\begin{figure}[!h]
   \centering
   \includegraphics[width=1\textwidth]{imgs/unable-to-connect-to-server-2.png}
-  \caption{The ``unable to connect to server" error prevents you from connecting to your printer.}
+\caption{``sudo [your text editor] /etc/cups/cupsd.conf" is the easiest way to open cupsd.conf with a text editor.}
   \label{fig12}
 \end{figure}
 
+\noindent Because you're using the \emph{sudo} command, you'll be prompted for your password.
 
 
 
@@ -320,7 +306,7 @@ This will change how CUPS works, but your computer probably (hopefully) won't ex
 
 
 
-
+\newpage
 \vspace{4cm}
 \hrule
 \noindent \center \emph{Read online at: \url{http://thenumberzero.blogspot.com/2014/02/how-to-fix-hp-printer-filter-failed.html}\\
